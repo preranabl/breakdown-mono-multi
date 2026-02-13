@@ -11,5 +11,5 @@ app.use(express.json());
 app.use("/payment", paymentRoutes);
 
 app.listen(5002, () => {
-  console.log("🚀 Payment service running on port 5002");
+  console.log("Payment service running on port 5002");
 });
