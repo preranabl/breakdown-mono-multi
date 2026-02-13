@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: preranabl/multi-fe:1.0.0
+    image: preranabl/multi-fe:1.1.0
     container_name: frontend-service
     ports:
       - "3000:3000"
@@ -9,7 +9,7 @@ services:
       - payment
 
   auth:
-    image: preranabl/multi-auth:1.0.0
+    image: preranabl/multi-auth:1.1.0
     container_name: auth-service
     ports:
       - "5001:5001"
@@ -18,7 +18,7 @@ services:
       - MONGO_URI=mongodb://host.docker.internal:27017/monolith-auth
 
   payment:
-    image: preranabl/multi-payment:1.0.0
+    image: preranabl/multi-payment:1.1.0
     container_name: payment-service
     ports:
       - "5002:5002"
