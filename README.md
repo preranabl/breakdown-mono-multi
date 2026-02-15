@@ -12,7 +12,7 @@ This repository demonstrates a **microservices architecture** - the result of de
 - Docker-based deployment strategies
 - Microservices best practices
 
-## 🔄 What Changed?
+## What Changed?
 
 ### From Monolith → To Microservices
 
@@ -21,7 +21,6 @@ This repository demonstrates a **microservices architecture** - the result of de
 | **Codebase** | Single repository | Multiple services |
 | **Deployment** | One unit | Independent deployments |
 | **Scaling** | Scale entire app | Scale services independently |
-| **Technology** | Locked to Node.js | Freedom per service |
 | **Database** | Shared MongoDB | Separate databases (optional) |
 | **Team Structure** | All in one codebase | Teams per service |
 | **Failure Impact** | System-wide | Isolated to service |
