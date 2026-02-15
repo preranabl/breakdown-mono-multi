@@ -40,7 +40,7 @@ This repository demonstrates a **microservices architecture** - the result of de
                     ┌────────────▼────────────┐
                     │   Frontend Service      │
                     │   (React/EJS)           │
-                    │   Port: 3001            │
+                    │   Port: 3000            │
                     └────────────┬────────────┘
                                  │
                 ┌────────────────┼────────────────┐
@@ -49,7 +49,7 @@ This repository demonstrates a **microservices architecture** - the result of de
     ┌───────────▼──────────┐    │    ┌──────────▼──────────┐
     │   Auth Service       │    │    │  Payment Service    │
     │   (Node.js)          │    │    │  (Node.js)          │
-    │   Port: 3002         │    │    │  Port: 3003         │
+    │   Port: 5001         │    │    │  Port: 5002         │
     │   • Registration     │    │    │  • Process Payment  │
     │   • Login/Logout     │    │    │  • Payment History  │
     │   • Session Mgmt     │    │    │  • Refunds          │
