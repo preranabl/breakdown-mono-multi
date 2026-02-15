@@ -1,4 +1,5 @@
 services:
+
   frontend:
     image: preranabl/multi-fe:1.1.0
     container_name: frontend-service
@@ -8,20 +9,35 @@ services:
       - auth
       - payment
 
+  mongodb:
+    image: preranabl/demo-db:v1   # your custom DB image
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
   auth:
     image: preranabl/multi-auth:1.1.0
     container_name: auth-service
     ports:
       - "5001:5001"
+    depends_on:
+      - mongodb
     environment:
       - PORT=5001
-      - MONGO_URI=mongodb://host.docker.internal:27017/monolith-auth
+      - MONGO_URI=mongodb://admin:admin123@mongodb:27017/auth_db?authSource=admin
 
   payment:
     image: preranabl/multi-payment:1.1.0
     container_name: payment-service
     ports:
       - "5002:5002"
+    depends_on:
+      - mongodb
     environment:
       - PORT=5002
-      - MONGO_URI=mongodb://host.docker.internal:27017/monolith-payment
+      - MONGO_URI=mongodb://admin:admin123@mongodb:27017/payment_db?authSource=admin
+
+volumes:
+  mongo_data:
