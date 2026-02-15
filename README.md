@@ -39,7 +39,7 @@ This repository demonstrates a **microservices architecture** - the result of de
                                  │
                     ┌────────────▼────────────┐
                     │   Frontend Service      │
-                    │   (React/EJS)           │
+                    │   (React/nodeJS)           │
                     │   Port: 3000            │
                     └────────────┬────────────┘
                                  │
