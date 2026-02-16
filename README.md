@@ -104,9 +104,10 @@ cd breakdown-mono-multi
 docker-compose up --build
 ```
 Access the services:
-Frontend: http://localhost:3000
-Auth API: http://localhost:5001
-Payment API: http://localhost:5002
+
+1. Frontend: http://localhost:3000
+2. Auth API: http://localhost:5001
+3. Payment API: http://localhost:5002
 
 ## Next Steps
 
