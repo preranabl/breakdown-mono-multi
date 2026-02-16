@@ -94,14 +94,16 @@ depends_on: Ensures that the database starts up before the services try to conne
 
 **Setup and Execution**
 - Clone the repo:
+  
   ```
 git clone https://github.com/preranabl/breakdown-mono-multi
 cd breakdown-mono-multi
-  ```
+  
+
 - Start the entire ecosystem:
   ```
 docker-compose up --build
-  ```
+
 Access the services:
 Frontend: http://localhost:3000
 Auth API: http://localhost:5001
