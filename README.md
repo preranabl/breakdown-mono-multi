@@ -39,7 +39,7 @@ This repository demonstrates a **microservices architecture** - the result of de
                                  │
                     ┌────────────▼────────────┐
                     │   Frontend Service      │
-                    │   (React/nodeJS)           │
+                    │   (React/nodeJS)        │
                     │   Port: 3000            │
                     └────────────┬────────────┘
                                  │
@@ -68,9 +68,10 @@ This repository demonstrates a **microservices architecture** - the result of de
 ```
 
 
-Microservices Breakdown - breakdown-mono-multi
+## Microservices Breakdown - breakdown-mono-multi
 This repository demonstrates the evolution of our application from a single monolith into a distributed microservices architecture. We have decoupled the frontend from the backend and split the backend into two distinct business domains: Authentication and Payments.
-🏗 The Microservices Architecture
+
+***The Microservices Architecture***
 Unlike the monolith where everything ran in one process on port 4000, this version runs as four separate containers working in harmony.
 1. Frontend Service (port 3000)
 Role: Serves the User Interface.
@@ -84,26 +85,29 @@ Scalability: If the app gets many sales, we can scale just this service without 
 4. Shared Database (mongodb:27017)
 Role: Central data store.
 Pattern: We are using a Shared Database pattern here. Both Auth and Payment services connect to the same MongoDB instance but use different logical databases (auth_db and payment_db).
-🔌 How they Communicate (Service Discovery)
+
+**How they Communicate (Service Discovery)**
 In this setup, we use Docker Internal Networking. Notice the MONGO_URI in the compose file:
 mongodb://admin:admin123@mongodb:27017/auth_db
 mongodb: This is not localhost. This is the service name defined in the docker-compose.yaml. Docker acts as a DNS server, allowing the auth container to find the mongodb container by its name.
 depends_on: Ensures that the database starts up before the services try to connect to it, preventing "Connection Refused" errors.
-🛠 Setup and Execution
-Clone the repo:
-code
-Bash
+
+**Setup and Execution**
+- Clone the repo:
+  ```
 git clone https://github.com/preranabl/breakdown-mono-multi
 cd breakdown-mono-multi
-Start the entire ecosystem:
-code
-Bash
+  ```
+- Start the entire ecosystem:
+  ```
 docker-compose up --build
+  ```
 Access the services:
 Frontend: http://localhost:3000
 Auth API: http://localhost:5001
 Payment API: http://localhost:5002
-## 🎯 Next Steps
+
+## Next Steps
 
 ### For Further Learning:
 
